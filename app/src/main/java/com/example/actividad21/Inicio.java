@@ -30,12 +30,12 @@ public class Inicio extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 EditText editTextNombre = (EditText) findViewById(R.id.editTextNombre);
-                String StNombre = editTextNombre.getText().toString();
+                String StringNombreLocal = editTextNombre.getText().toString();
+
+                Intent sIntent = new Intent(Inicio.this,Resultado.class);
+                sIntent.putExtra("STNombre",StringNombreLocal);
+                startActivity(sIntent);
             }
         });
-
-        Intent sIntent = new Intent(Inicio.this,Resultado.class);
-        sIntent.putExtra("STNombre",StNombre);
-        startActivity(sIntent);
     }
 }
